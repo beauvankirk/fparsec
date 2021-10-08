@@ -1,10 +1,11 @@
 ﻿// Copyright (c) Stephan Tolksdorf 2009-2011
 // License: Simplified BSD License. See accompanying documentation.
-
 [<CompilationRepresentation(CompilationRepresentationFlags.ModuleSuffix)>]
 module FParsec.Internals
 
 open System.Diagnostics
+
+#nowarn "42"
 
 // The following functions are defined using inline IL to help fsc generate code
 // the JIT knows better how to optimize.

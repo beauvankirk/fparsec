@@ -4,15 +4,16 @@
 # powershell -ExecutionPolicy ByPass -File pack.ps1 -versionSuffix "" > pack.out.txt
 
 Param(
-  [string]$versionSuffix = "dev"
+  [string]$versionSuffix = ""
 )
 
 $ErrorActionPreference = 'Stop'
 
-$configs = $('Release-LowTrust', 'Release')
+# $configs = $('Release-LowTrust', 'Release')
+$configs = $('Release-LowTrust')
 
-$testTargetFrameworks = @{'Release'          = $('net45')
-                          'Release-LowTrust' = $('netcoreapp3.0', 'net45')}
+$testTargetFrameworks = @{'Release'          = $('net472')
+                          'Release-LowTrust' = $('netcoreapp3.1', 'net472')}
 
 function invoke([string] $cmd) {
     echo ''
@@ -35,6 +36,6 @@ foreach ($config in $configs) {
     invoke "dotnet pack FParsec/FParsec.fsproj $props -o ""$pwd\nupkgs"""
     invoke "dotnet build Test/Test.fsproj $props -v n"
     foreach ($tf in $testTargetFrameworks[$config]) {
-        invoke "dotnet run --no-build -p Test/Test.fsproj -c $config -f $tf"
+        invoke "dotnet run  -p Test/Test.fsproj -c $config -f $tf"
     }
 }

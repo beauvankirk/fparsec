@@ -349,7 +349,7 @@ type Inline =
 #endif
                        ManyTill: stateFromFirstElement: ('T -> 'State)
                                * foldState: ('State -> 'T -> 'State)
-                               * resultFromStateAndEnd: ('State -> 'E -> 'Result)
+                               * resultFromStateAndEndParserResult: ('State -> 'E -> 'Result)
                                * elementParser: Parser<'T,'U>
                                * endParser: Parser<'E,'U>
                                * ?firstElementParser: Parser<'T,'U>

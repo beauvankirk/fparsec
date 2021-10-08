@@ -3,8 +3,8 @@
   <PropertyGroup>
     <AssemblyName>Calculator</AssemblyName>
     <RootNamespace>Calculator</RootNamespace>
-    <TargetFrameworks>netcoreapp3.0;net45</TargetFrameworks>
-    <TargetFrameworks Condition="'$(LowTrust)' == 'false'">net45</TargetFrameworks>
+    <TargetFrameworks>netcoreapp3.1;net472</TargetFrameworks>
+    <TargetFrameworks Condition="'$(LowTrust)' == 'false'">net472</TargetFrameworks>
   </PropertyGroup>
 
   <Import Project="Calculator.targets" />

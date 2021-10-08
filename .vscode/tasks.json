@@ -15,7 +15,7 @@
         },
         {
             "label": "Build .NET Core Test (Config: Debug-LowTrust)",
-            "command": "dotnet build Test/Test.fsproj -c Debug-LowTrust -f netcoreapp3.0",
+            "command": "dotnet build Test/Test.fsproj -c Debug-LowTrust -f netcoreapp3.1",
             "type": "shell",
             "group": "build",
             "presentation": {
@@ -25,7 +25,7 @@
         },
         {
             "label": "Build .NET 4.5 Test (Config: Debug-LowTrust)",
-            "command": "dotnet build Test/Test.fsproj -c Debug-LowTrust -f net45",
+            "command": "dotnet build Test/Test.fsproj -c Debug-LowTrust -f net472",
             "type": "shell",
             "group": "build",
             "presentation": {
@@ -45,7 +45,7 @@
         },
         {
             "label": "Test .NET Core (Config: Debug-LowTrust)",
-            "command": "dotnet Test/bin/Debug-LowTrust/netcoreapp3.0/Test.dll",
+            "command": "dotnet Test/bin/Debug-LowTrust/netcoreapp3.1/Test.dll",
             "type": "shell",
             "group": "test",
             "presentation": {
@@ -55,7 +55,7 @@
         },
         {
             "label": "Test .NET 4.5 (Config: Debug-LowTrust)",
-            "command": "Test/bin/Debug-LowTrust/net45/Test.exe",
+            "command": "Test/bin/Debug-LowTrust/net472/Test.exe",
             "type": "shell",
             "group": "test",
             "presentation": {
